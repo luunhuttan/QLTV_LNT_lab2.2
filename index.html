@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hệ Thống Quản Lý Thư Viện</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="header-left">
+            <h1 class="library-title">Library</h1>
+        </div>
+        <div class="header-right">
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Tìm kiếm sách">
+                <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="m21 21-4.35-4.35"></path>
+                </svg>
+            </div>
+            <div class="action-buttons">
+                <button class="btn btn-primary add-book-btn">+ Thêm Sách</button>
+                <button class="btn add-member-btn">+ Thêm Thành viên</button>
+                <button class="btn borrow-btn">Mượn Sách</button>
+                <button class="btn return-btn">Trả Sách</button>
+                <button class="btn edit-book-btn">Sửa Sách</button>
+                <button class="btn edit-member-btn">Sửa Thành viên</button>
+            </div>
+            <div class="user-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+            </div>
+        </div>
+    </header>
+
+    <!-- Statistical Buttons -->
+    <div class="stats-container">
+        <button class="stat-btn">Tổng sách</button>
+        <button class="stat-btn">Số Thành viên</button>
+        <button class="stat-btn">Đang mượn</button>
+        <button class="stat-btn">Trễ hạn</button>
+    </div>
+
+    <!-- Main Content Grid -->
+    <div class="content-grid">
+        <!-- Top Left: Recently Borrowed Books -->
+        <div class="content-block">
+            <div class="block-header">
+                <h2 class="block-title">Sách mượn gần đây</h2>
+                <div class="menu-dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div class="table-container">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Mã phiếu</th>
+                            <th>Thành viên</th>
+                            <th>Sách</th>
+                            <th>Ngày mượn</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Data will be populated here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Top Right: Upcoming Due Dates -->
+        <div class="content-block">
+            <div class="block-header">
+                <h2 class="block-title">Sắp đến hạn</h2>
+                <div class="menu-dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div class="table-container">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Mã</th>
+                            <th>Sách</th>
+                            <th>Trạng thái</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Data will be populated here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Bottom Left: Books -->
+        <div class="content-block">
+            <div class="block-header">
+                <h2 class="block-title">Sách</h2>
+                <div class="menu-dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div class="table-container">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Mã Sách</th>
+                            <th>Tác Giả</th>
+                            <th>Thể Loại</th>
+                            <th>SL</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Data will be populated here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Bottom Right: Members -->
+        <div class="content-block">
+            <div class="block-header">
+                <h2 class="block-title">Thành viên</h2>
+                <div class="menu-dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div class="table-container">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Mã TV</th>
+                            <th>Họ tên</th>
+                            <th>Email</th>
+                            <th>Trạng thái</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Data will be populated here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div id="toast-container"></div>
+    <script src="app.js"></script>
+</body>
+</html>
+
