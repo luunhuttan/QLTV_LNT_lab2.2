@@ -16,20 +16,20 @@
             <h1 class="library-title">Library</h1>
         </div>
         <div class="header-right">
-            <div class="search-container">
-                <input type="text" class="search-input" placeholder="Tìm kiếm sách">
-                <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="11" cy="11" r="8"></circle>
-                    <path d="m21 21-4.35-4.35"></path>
-                </svg>
-            </div>
             <div class="action-buttons">
                 <button class="btn btn-primary add-book-btn">+ Thêm Sách</button>
+                <button class="btn edit-book-btn">Sửa Sách</button>
+                <button class="btn delete-book-btn">Xóa Sách</button>
+                <button class="btn search-book-btn">Tìm Sách</button>
                 <button class="btn add-member-btn">+ Thêm Thành viên</button>
+                <button class="btn edit-member-btn">Sửa Thành viên</button>
+                <button class="btn delete-member-btn">Xóa Thành viên</button>
+                <button class="btn search-member-btn">Tìm Thành viên</button>
                 <button class="btn borrow-btn">Mượn Sách</button>
                 <button class="btn return-btn">Trả Sách</button>
-                <button class="btn edit-book-btn">Sửa Sách</button>
-                <button class="btn edit-member-btn">Sửa Thành viên</button>
+                <button class="btn overdue-btn">Sách Quá Hạn</button>
+                <button class="btn history-btn">Lịch Sử Mượn</button>
+                <button class="btn report-btn">Báo Cáo Đang Mượn</button>
             </div>
             <div class="user-icon">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -117,7 +117,9 @@
                 <table class="data-table">
                     <thead>
                         <tr>
+                            <th>STT</th>
                             <th>Mã Sách</th>
+                            <th>Tên Sách</th>
                             <th>Tác Giả</th>
                             <th>Thể Loại</th>
                             <th>SL</th>
@@ -144,6 +146,7 @@
                 <table class="data-table">
                     <thead>
                         <tr>
+                            <th>STT</th>
                             <th>Mã TV</th>
                             <th>Họ tên</th>
                             <th>Email</th>

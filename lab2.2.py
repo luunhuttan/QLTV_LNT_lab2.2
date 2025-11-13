@@ -5,14 +5,14 @@ from borrowing import Borrowing
 from datetime import date, timedelta
 
 #Hàm trợ giúp để nhập chuỗi không rỗng
-def get_string_input(prompt, min_length=2):
+def get_string_input(prompt, min_length=2, require_alpha_start=False):
     """
     Hiển thị 'prompt' và yêu cầu người dùng nhập.
     Lặp lại cho đến khi người dùng nhập một chuỗi
     1. Không rỗng
     2. Có độ dài ít nhất min_length
     3. Không chỉ chứa số
-    4. Phải bắt đầu bằng một chữ cái (THÊM MỚI)
+    4. (Tùy chọn) Phải bắt đầu bằng một chữ cái khi require_alpha_start=True
     """
     while True:
         user_input = input(prompt).strip()
@@ -29,9 +29,9 @@ def get_string_input(prompt, min_length=2):
             print("Lỗi: Thông tin này không thể chỉ chứa số. Vui lòng nhập lại.")
             continue
             
-        # 4. KIỂM TRA MỚI: Ký tự đầu tiên phải là chữ cái
+        # 4. KIỂM TRA MỚI (tuỳ chọn): Ký tự đầu tiên phải là chữ cái
         # (isalpha() hoạt động tốt với cả tiếng Việt có dấu)
-        if not user_input[0].isalpha():
+        if require_alpha_start and not user_input[0].isalpha():
             print("Lỗi: Thông tin này phải bắt đầu bằng một chữ cái. Vui lòng nhập lại.")
             continue
 
@@ -189,7 +189,7 @@ def main():
             print_books(Book.get_all_books(db))
 
         elif choice == "6":
-            name = get_string_input("Tên thành viên: ").strip()
+            name = get_string_input("Tên thành viên: ", require_alpha_start=True).strip()
             Member(None, name).add_member(db)
             print("Đã thêm thành viên.")
 
@@ -200,7 +200,7 @@ def main():
                 print("Không tìm thấy thành viên.")
             else:
                 print("Hiện tại:", check_member_id)
-                new_name = get_string_input("Tên mới: ")
+                new_name = get_string_input("Tên mới: ", require_alpha_start=True)
                 Member(member_id, new_name).update_member_info(db)
                 print("Đã cập nhật.")
 

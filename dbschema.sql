@@ -38,3 +38,6 @@ CREATE TABLE borrowing (
     FOREIGN KEY (book_id) REFERENCES books(book_id)
 );
 -- KẾT THÚC: SCHEMA SẠCH ĐÃ SẴN SÀNG
+select * from books;
+select * from members;
+select * from borrowing;
