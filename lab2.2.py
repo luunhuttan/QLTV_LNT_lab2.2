@@ -63,7 +63,6 @@ def get_integer_in_range(prompt, valid_options):
             # Số hợp lệ, nhưng không nằm trong phạm vi
             print(f"Lỗi: Vui lòng chỉ chọn một trong các giá trị: {valid_options}")
 
-
 def get_integer_with_min_max(prompt, min_val=None, max_val=None):
     """
     Hiển thị 'prompt' và yêu cầu người dùng nhập một số nguyên.
